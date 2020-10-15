@@ -7,9 +7,11 @@ user_input = input("Enter the path of your TXT file: ")
 assert os.path.exists(user_input), "File does not exist at, "+str(user_input)
 f = open(user_input,'r+')
 
-test = ''
+print('\n')
+
+characters = ''
 for x in f:
-  test += x
+  characters += x
 
 def removeDuplicate(str, n):  
     index = 0
@@ -23,12 +25,12 @@ def removeDuplicate(str, n):
               
     return "".join(str[:index]) 
 
-string= test
+string= characters
 n = len(string)
 no_duplicate = removeDuplicate(list(string), n) 
 
 count_1 = 0
-for i in test:
+for i in characters:
   if i != ' ':       
     count_1 = count_1 + 1
 
@@ -38,7 +40,7 @@ list_arr = []
 for x in no_duplicate:
   if x != ' ' and x != '\n':      
     count = 0
-    for i in test:
+    for i in characters:
       if i == x: 
         count += 1
     count = (count/count_1) * 100
@@ -56,4 +58,3 @@ for value in list_arr:
 
 print(chars_diagram)
 print(chars_pers)
-
